@@ -1,17 +1,11 @@
 import { useReducer } from "react"
+import ACTIONS from "./actions"
 import DigitButton from "./DigitButton"
 import OperationButton from "./OperationButton"
 import "./App.css"
 
-export const ACTIONS = {
-  ADD_DIGIT: "add-digit",
-  CHOOSE_OPERATION: "choose-operation",
-  CLEAR: "clear",
-  DELETE_DIGIT: "delete-digit",
-  EVALUATE: "evaluate",
-}
-
-function reducer(state, { type, payload }) {
+const reducer =(state, { type, payload })=> {
+  // eslint-disable-next-line
   switch (type) {
     case ACTIONS.ADD_DIGIT:
       if (state.overwrite) {
@@ -102,6 +96,7 @@ function evaluate({ currentOperand, previousOperand, operation }) {
   const current = parseFloat(currentOperand)
   if (isNaN(prev) || isNaN(current)) return ""
   let computation = ""
+  // eslint-disable-next-line
   switch (operation) {
     case "+":
       computation = prev + current

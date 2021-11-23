@@ -1,6 +1,7 @@
-import { ACTIONS } from "./App"
+import ACTIONS from "./actions"
 
-export default function OperationButton({ dispatch, operation }) {
+
+const OperationButton= ({ dispatch, operation }) =>{
   return (
     <button
       onClick={() =>
@@ -11,3 +12,5 @@ export default function OperationButton({ dispatch, operation }) {
     </button>
   )
 }
+
+export default OperationButton
